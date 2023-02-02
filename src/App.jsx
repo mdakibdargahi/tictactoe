@@ -6,6 +6,7 @@ const App = () => {
   return (
     <div className="app">
       <h1>Tic Tac Toe</h1>
+      <h2>messages</h2>
       <Board />
     </div>
   );
