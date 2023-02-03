@@ -41,8 +41,8 @@ const App = () => {
       <h2>{message}</h2>
       <Board squares={squares} handleSquareClick={handleSquareClick} />
       <br />
-      <button className="reset-btn" onClick={handleReset}>
-        Play again
+      <button type="button" className="reset-btn" onClick={handleReset}>
+        Start New Game
       </button>
     </div>
   );
