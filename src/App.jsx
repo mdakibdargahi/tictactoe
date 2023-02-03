@@ -9,9 +9,12 @@ const App = () => {
 
   const winner = calculateWinner(squares);
 
-  const message = winner
-    ? `The Winner is ${winner}`
-    : `Next player is ${isNext ? 'X' : 'O'}`;
+  const message =
+    winner && winner != 'draw'
+      ? `The Winner is ${winner} `
+      : winner && winner === 'draw'
+      ? `It is a ${winner}`
+      : `Next player is ${isNext ? 'X' : 'O'}`;
 
   const handleSquareClick = clickedPosition => {
     if (squares[clickedPosition] || winner) {
@@ -28,12 +31,19 @@ const App = () => {
     });
     setIsNext(currentSquare => !currentSquare);
   };
+  const handleReset = () => {
+    return setSquares(Array(9).fill(null));
+  };
 
   return (
     <div className="app">
       <h1>Tic Tac Toe</h1>
       <h2>{message}</h2>
       <Board squares={squares} handleSquareClick={handleSquareClick} />
+      <br />
+      <button className="reset-btn" onClick={handleReset}>
+        Play again
+      </button>
     </div>
   );
 };

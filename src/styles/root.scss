@@ -19,6 +19,18 @@ button {
   }
 }
 
+.reset-btn {
+  color: #fff;
+  background: #7e78cc;
+  border-radius: 8px;
+  border: 1px solid #7e78cc;
+
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .app {
   font-size: 20px;
   display: flex;
