@@ -7,7 +7,7 @@ const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [isNext, setIsNext] = useState(false);
 
-  const winner = calculateWinner(squares);
+  const { winner, winningSquares } = calculateWinner(squares);
 
   const message =
     winner && winner != 'draw'
@@ -39,7 +39,11 @@ const App = () => {
     <div className="app">
       <h1>Tic Tac Toe</h1>
       <h2>{message}</h2>
-      <Board squares={squares} handleSquareClick={handleSquareClick} />
+      <Board
+        squares={squares}
+        handleSquareClick={handleSquareClick}
+        winningSquares={winningSquares}
+      />
       <br />
       <button type="button" className="reset-btn" onClick={handleReset}>
         Start New Game
